@@ -1,0 +1,13 @@
+<% if @plays.empty? %>
+  <p>No plays yet</p>
+<% else %>
+  <% @plays.each do |play| %>
+    <%= play.game %>
+    <%= play.category %>
+    <%= play.video %>
+    <%= play.title %>
+    <%= play.comment %>
+    <%= play.player.nickname %>
+    <%= play.user.first_name %>
+    <% end %>
+<% end %>
