@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_27_184647) do
+ActiveRecord::Schema.define(version: 2021_09_27_191237) do
+
+  create_table "players", force: :cascade do |t|
+    t.string "nickname"
+    t.integer "prizes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "plays", force: :cascade do |t|
+    t.string "game"
+    t.string "category"
+    t.string "video"
+    t.string "title"
+    t.string "comment"
+    t.integer "player_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_plays_on_player_id"
+    t.index ["user_id"], name: "index_plays_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +43,15 @@ ActiveRecord::Schema.define(version: 2021_09_27_184647) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "play_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["play_id"], name: "index_votes_on_play_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
 end
