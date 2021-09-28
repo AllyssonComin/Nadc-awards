@@ -1,13 +1,7 @@
-<% if @plays.empty? %>
-  <p>No plays yet</p>
-<% else %>
-  <% @plays.each do |play| %>
-    <%= play.game %>
-    <%= play.category %>
-    <%= play.video %>
-    <%= play.title %>
-    <%= play.comment %>
-    <%= play.player.nickname %>
-    <%= play.user.first_name %>
-    <% end %>
-<% end %>
+<%= @play.game %>
+<%= @play.category %>
+<%= @play.title %>
+<%# <%= @play.comment %>
+<%# <%= @play.player.nickname %>
+<%# <%= play.user.first_name %>
+<iframe width="560" height="315" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
