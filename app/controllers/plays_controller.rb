@@ -11,6 +11,15 @@ class PlaysController < ApplicationController
     @play = Play.new
   end
 
+  def create
+    @play = Play.new(play_params)
+    if @play.save
+      redirect_to plays_path
+    else
+      render :new
+    end
+  end
+
   def edit
     @play = Play.find(params[:id])
   end
@@ -21,20 +30,12 @@ class PlaysController < ApplicationController
       redirect_to @play
     else
       render :edit
-  end
-
-  def create
-    @play = Play.new(play_params)
-    if @play.save
-      redirect_to plays_path
-    else
-      render :new
     end
   end
 
   private
 
   def play_params
-    params.require(:play).permit(:game, :category, :video, :title, :comment, :nickname)
+    params.require(:play).permit(:game, :category, :video, :title, :comment)
   end
 end
