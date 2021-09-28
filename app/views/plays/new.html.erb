@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for @play do |f| %>
+    <%= f.input :game, label: 'Game', collection: ['League of Legends', 'Counter Strike', 'Outros']  %>
+    <%= f.input :category, label: 'Category', collection: ['Fun', 'Noob', 'Pro Highlight']%>
+    <%= f.input :video, label: 'YouTube URL'%>
+    <%= f.input :title, label: 'Title' %>
+    <%= f.button :submit, "Send", class: "btn btn-primary btn-lg"%>
+  <% end %>
+</div>
