@@ -1,0 +1,7 @@
+<% if @player.prizes.empty? do %>
+  <%= 'This Fucking Player has no fucking prize' %>
+<% else %>
+  <% @player.each do |player| %>
+    <%= player.prizes %>
+  <% end %>
+<% end %>
