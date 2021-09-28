@@ -9,6 +9,7 @@ class PlaysController < ApplicationController
 
   def new
     @play = Play.new
+    @users = User.pluck(:email)
   end
 
   def create
@@ -36,6 +37,6 @@ class PlaysController < ApplicationController
   private
 
   def play_params
-    params.require(:play).permit(:game, :category, :video, :title, :comment)
+    params.require(:play).permit(:game, :category, :video, :title, :player_id)
   end
 end

@@ -4,6 +4,7 @@
     <%= f.input :category, label: 'Category', collection: ['Fun', 'Noob', 'Pro Highlight']%>
     <%= f.input :video, label: 'YouTube URL'%>
     <%= f.input :title, label: 'Title' %>
+    <%= f.input :player_id, collection: @users, label: 'Who did it?' %>
     <%= f.button :submit, "Send", class: "btn btn-primary btn-lg"%>
   <% end %>
 </div>
