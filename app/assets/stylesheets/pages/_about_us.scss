@@ -1,6 +1,14 @@
-.aboutus-left-container {
-  width: 35%;
-  h1 {
+
+.aboutus-container {
+  width: 50%;
+
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+ h1 {
     font-size: 45px;
     font-weight: 500;
     font-family: 'Karla', sans-serif;
@@ -11,14 +19,6 @@
     font-size: 16px;
     font-family: 'Karla', sans-serif;
   }
-
-}
-
-.aboutus-container {
-  background-size: cover;
-  background-position: center center;
-  width: 350px;
-  height: 350px;
 }
 
 a {
@@ -31,4 +31,12 @@ a {
   align-items: center;
   justify-content: center;
   }
+}
+
+.blue-text-color {
+  color: #EF306A;
+}
+
+.card-text {
+  font-family: 'Karla', sans-serif;
 }
