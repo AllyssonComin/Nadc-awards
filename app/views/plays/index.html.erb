@@ -1,4 +1,6 @@
 <div class="container">
+  <%= link_to "Home Page", root_path, class: "btn btn-primary"%>
+  <%= link_to "Send a play!", new_play_path, class: "btn btn-primary"%>
   <% if @plays.empty? %>
     <p>No plays yet</p>
     <%= link_to "Add your favorite play", plays_path, method: :new, class: "btn btn-primary"%>
@@ -11,5 +13,4 @@
       <li><%= link_to "See more", play_path(play.id), class: "btn btn-primary"%></li>
       <% end %>
   <% end %>
-  <br>
 </div>
