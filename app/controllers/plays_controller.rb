@@ -14,6 +14,7 @@ class PlaysController < ApplicationController
 
   def create
     @play = Play.new(play_params)
+    @play.uploader = current_user.first_name
     if @play.save
       redirect_to plays_path
     else
