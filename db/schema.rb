@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_09_29_172132) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "players", force: :cascade do |t|
     t.string "nickname"
     t.integer "prizes"
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 2021_09_29_172132) do
     t.string "video"
     t.string "title"
     t.string "comment"
-    t.integer "player_id"
-    t.integer "user_id"
+    t.bigint "player_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "uploader"
@@ -50,8 +53,8 @@ ActiveRecord::Schema.define(version: 2021_09_29_172132) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "play_id"
-    t.integer "user_id"
+    t.bigint "play_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["play_id"], name: "index_votes_on_play_id"
