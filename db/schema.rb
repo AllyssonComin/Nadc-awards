@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_09_29_172132) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uploader"
     t.index ["player_id"], name: "index_plays_on_player_id"
     t.index ["user_id"], name: "index_plays_on_user_id"
   end
