@@ -15,11 +15,19 @@ class PlaysController < ApplicationController
   def create
     @play = Play.new(play_params)
     @play.uploader = current_user.first_name
+    @play.save
+    # PLAY.UPLOADER NOT WORKING
     if @play.save
       redirect_to plays_path
     else
       render :new
     end
+  end
+
+  def destroy
+    @play = Play.find(params[:id])
+    @play.destroy
+    redirect_to plays_path
   end
 
   def edit
