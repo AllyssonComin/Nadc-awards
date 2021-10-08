@@ -14,10 +14,9 @@ class PlaysController < ApplicationController
 
   def create
     @play = Play.new(play_params)
-    byebug
     @play.uploader = current_user.first_name
     @play.save
-    # NAO TA PEGANDO O PLAY UPLOADER
+    # PLAY.UPLOADER NOT WORKING
     if @play.save
       redirect_to plays_path
     else
