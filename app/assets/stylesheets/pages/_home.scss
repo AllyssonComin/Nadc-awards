@@ -4,13 +4,14 @@
 
 .titulo {
   h1 {
-    padding: 20px;
+    padding: 0px;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
     color: white;
     font-size: 2rem;
+    vertical-align: middle;
   }
-  
+
   h2 {
     font-family: 'Press Start 2P', cursive;
     text-align: center;
@@ -24,7 +25,7 @@
   text-align: left;
   color: white;
   font-size: 1rem;
-  padding: 25px 0px 5px 52px;
+  padding: 25px 0px 5px 0px;
 }
 
 .made {
@@ -32,18 +33,5 @@
   text-align: right;
   color: white;
   font-size: 1rem;
-  padding: 10px 52px 25px 0;
-}
-
-.btn-home {
-  font-family: 'Press Start 2P', cursive;
-  color: white;
-  text-align: center;
-  background-color: rgba(220, 54, 111, 1);
-  padding: 15px 25px;
-  border-radius: 25px;
-    &:hover {
-      color: white;
-      background-color: rgba(220, 54, 111, 0.5);
-    }
+  padding: 10px 0px 25px 0;
 }

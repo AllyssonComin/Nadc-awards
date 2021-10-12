@@ -1,6 +1,8 @@
-<div id="background-new"></div>
-  <div class="titulo">
-    <h1 class="pt-5 justify-content-center">Sign up</h1>
+<div class="layout">
+  <div class="w-100">
+    <div class="titulo">
+      <h1 class="justify-content-center">Sign up</h1>
+    </div>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -33,25 +35,6 @@
           </div>
         </div>
       </div>
-
     <% end %>
   </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-<script>
-VANTA.NET({
-  el: "#background-new",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  backgroundColor: 0x120b22,
-  points: 15.00,
-  maxDistance: 29.00,
-  spacing: 20.00
-})
-</script>
+</div>

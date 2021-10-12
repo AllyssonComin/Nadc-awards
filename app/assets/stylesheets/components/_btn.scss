@@ -1,0 +1,26 @@
+.btn-home {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  text-align: center;
+  background-color: rgba(220, 54, 111, 1);
+  padding: 15px 25px;
+  border-radius: 25px;
+    &:hover {
+      color: white;
+      background-color: rgba(220, 54, 111, 0.5);
+    }
+}
+
+.btn-small {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  background-color: rgba(220, 54, 111, 1);
+  padding: 10px 15px;
+  border-radius: 25px;
+    &:hover {
+      color: white;
+      background-color: rgba(220, 54, 111, 0.5);
+    }
+}

@@ -12,7 +12,7 @@ require("three")
 
 import { vantaJs } from '../components/vanta';
 document.addEventListener('turbolinks:load', () => {
-  // vantaJs();
+  vantaJs();
 });
 
 

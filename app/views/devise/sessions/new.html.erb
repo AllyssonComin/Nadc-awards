@@ -1,20 +1,36 @@
-<h2>Log in</h2>
+<div class="layout ">
+  <div class="w-100">
+    <div class="titulo">
+      <h1 class="justify-content-center">Log in</h1>
+    </div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="box-form form-inputs container">
+        <div class="col-12">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+        </div>
+        <div class="col-12">
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+
+        </div>
+        <div class="col-12 d-flex justify-content-around">
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn-small" %>
+          <%= link_to "Forgot your password?", new_user_password_path, class: "btn-small" %>
+        </div>
+
+        <div class="form-actions d-flex justify-content-around">
+        </div>
+        <div class="form-actions d-flex justify-content-around py-5">
+          <%= f.button :submit, "Log in", class: "btn-home" %>
+          <%= link_to "Back", root_path, class: "btn-home" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

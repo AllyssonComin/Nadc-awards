@@ -1,7 +1,7 @@
 
 const vantaJs = () => {
   VANTA.NET({
-    el: "#background-home",
+    el: ".background-vanta",
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
