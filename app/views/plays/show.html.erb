@@ -1,11 +1,12 @@
 <div class="thumbnail thumb-box">
-  <%= @play.game %>
-  <%= @play.category %>
-  <%= @play.title %>
-  <%# <%= @play.comment %>
+<ul class="container">
+  <p>Game: <%= @play.game %></p>
+  <p>Category: <%= @play.category %></p>
+  <p>Title: <%= @play.title %></p>
+  <p>Who send it: <%= @play.uploader %></p>
   <%# <%= @play.player.nickname %>
   <%# <%= play.user.first_name %>
-  <iframe width="560" height="315" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
+  <iframe width="1000" height="760" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
     <div class="caption" style="text-align:center;">
       <%= link_to like_play_path(@play), class: "like", method: :put do %>
         <button type="button" class="btn btn-info" aria-label="Left Align">
@@ -21,4 +22,8 @@
         </button>
       <% end %>
     </div>
+</ul>
+<div class="container">
+  <%= link_to "Delete", play_path(@play), method: :delete, id: "delete-link", class: "btn btn-danger" %>
+  <%= link_to "Back", plays_path, class: "btn btn-success" %>
 </div>
