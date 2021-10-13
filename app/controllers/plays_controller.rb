@@ -35,6 +35,18 @@ class PlaysController < ApplicationController
     end
   end
 
+  def upvote
+    @play = Play.find(params[:id])
+    @play.upvote_from current_user
+    redirect_to @play
+  end
+
+  def downvote
+    @play = Play.find(params[:id])
+    @play.downvote_from current_user
+    redirect_to @play
+  end
+
   private
 
   def play_params
