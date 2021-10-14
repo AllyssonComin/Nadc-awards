@@ -1,15 +1,48 @@
-<div class="container">
-  <h1>Welcome to the Meat Hookah Awards</h1>
-  <h2>The Meat Hookah Awards aim to annually crown the best/funny/pro plays.</h2>
-</div>
+<div id="background-home">
+  <div class="nav d-flex justify-content-between">
+    <%= link_to "Sign up", new_user_registration_path, class: "btn-home"%>
+    <% if current_user %>
+      <%= link_to "Sign out", destroy_user_session_path, method: "delete",class: "btn-home" %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path, class: "btn-home" %>
+    <% end %>
+  </div>
 
-<div class="container">
-  <h2>This video is our biggest inspiration.</h2>
-  <iframe width="1000" height="700" src=<%="https://www.youtube.com/embed/aVSpPk6Ws28" %>></iframe>
-  <h3>Made by Jasso</h3>
+  <div class="titulo">
+    <h1>Welcome to the Meat Hookah Awards</h1>
+    <h2>The Meat Hookah Awards aim to annually crown the best/funny/pro plays.</h2>
+  </div>
+
+  <div class="container">
+    <h2 class="video-title">This video is our biggest inspiration.</h2>
+    <div class="d-flex justify-content-center">
+      <iframe width="1000" height="700" src=<%="https://www.youtube.com/embed/aVSpPk6Ws28" %>></iframe>
+    </div>
+    <h3 class="made">Made by Jasso</h3>
+  </div>
+
+  <div class="container d-flex justify-content-around pb-5">
+    <%= link_to "About us", about_us_path, class: "btn-home"%>
+    <%= link_to "See the plays", plays_path, class: "btn-home"%>
+    <%= link_to "Send a play!", new_play_path, class: "btn-home"%>
+  </div>
+
 </div>
-<div class="container">
-  <%= link_to "About us", about_us_path, class: "btn btn-primary"%>
-  <%= link_to "See the plays", plays_path, class: "btn btn-primary"%>
-  <%= link_to "Send a play!", new_play_path, class: "btn btn-primary"%>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script>
+VANTA.NET({
+  el: "#background-home",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundColor: 0x120b22,
+  points: 15.00,
+  maxDistance: 29.00,
+  spacing: 20.00
+})
+</script>
