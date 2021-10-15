@@ -9,15 +9,15 @@
   <iframe width="1000" height="760" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
     <div class="caption" style="text-align:center;">
       <%= link_to like_play_path(@play), class: "like", method: :put do %>
-        <button type="button" class="btn btn-info" aria-label="Left Align">
-          <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+        <button type="button" class="btn btn-success" aria-label="Left Align">
+          <span class="far fa-thumbs-up" aria-hidden="true"></span>
           <span class="badge"><%= @play.get_upvotes.size %></span>
         </button>
       <% end %>
 
       <%= link_to unlike_play_path(@play), class: "like", method: :put do %>
-        <button type="button" class="btn btn-info" aria-label="Left Align">
-          <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+        <button type="button" class="btn btn-danger" aria-label="Left Align">
+          <span class="far fa-thumbs-down" aria-hidden="true"></span>
           <span class="badge"><%= @play.get_downvotes.size %></span>
         </button>
       <% end %>
