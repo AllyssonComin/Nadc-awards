@@ -4,8 +4,7 @@
   <p>Category: <%= @play.category %></p>
   <p>Title: <%= @play.title %></p>
   <p>Who send it: <%= @play.uploader %></p>
-  <%# <%= @play.player.nickname %>
-  <%# <%= play.user.first_name %>
+  <p>Who did it: <%= @play&.user&.nickname %></p>
   <iframe width="1000" height="760" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
     <div class="caption" style="text-align:center;">
       <%= link_to like_play_path(@play), class: "like", method: :put do %>

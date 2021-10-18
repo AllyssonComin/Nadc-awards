@@ -28,6 +28,7 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 gem 'bootstrap'
 gem 'devise'
+gem 'pg_search', '~> 2.3.0'
 
 gem 'acts_as_votable'
 # Reduces boot times through caching; required in config/boot.rb
