@@ -61,6 +61,6 @@ class PlaysController < ApplicationController
   private
 
   def play_params
-    params.require(:play).permit(:game, :category, :video, :title, :player_id, :search)
+    params.require(:play).permit(:game, :category, :video, :title, :player_id)
   end
 end
