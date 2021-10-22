@@ -4,34 +4,33 @@
       <h1 class="justify-content-center">Sign up</h1>
     </div>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-      <div class="box-form form-inputs container">
-        <div class="row">
-          <div class="col-6">
-            <%= f.input :first_name, required: true, autofocus: true%>
-          </div>
-          <div class="col-6">
-            <%= f.input :last_name, required: true, autofocus: true %>
-          </div>
-          <div class="col-12">
-            <%= f.input :nickname, required: true, autofocus: true %>
-            <%= f.input :email,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" } %>
-            <%= f.input :password,
-                        required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :password_confirmation,
-                        required: true,
-                        input_html: { autocomplete: "new-password" } %>
-            <div class="form-actions d-flex justify-content-between pb-5">
-              <%= f.button :submit, "Sign up", class: "btn-home" %>
-              <%= link_to "Back", root_path, class: "btn-home"%>
-            </div>
+    <div class="box-form form-inputs container">
+      <div class="row">
+        <div class="col-6">
+          <%= f.input :first_name, required: true, autofocus: true%>
+        </div>
+        <div class="col-6">
+          <%= f.input :last_name, required: true, autofocus: true %>
+        </div>
+        <div class="col-12">
+          <%= f.input :nickname, required: true, autofocus: true %>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+          <div class="form-actions d-flex justify-content-between pb-5">
+            <%= f.button :submit, "Sign up", class: "btn-home" %>
+            <%= link_to "Back", root_path, class: "btn-home"%>
           </div>
         </div>
       </div>
