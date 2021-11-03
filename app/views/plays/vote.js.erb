@@ -1,0 +1,7 @@
+<% if current_user.liked? @play  %>
+  $('.like-btn').removeClass('liked');
+<% else %>
+  $('.like-btn').addClass('like-btn');
+<% end %>
+$('.likes-count').html("<%= @play.get_upvotes.size %>")
+console.log('okay')

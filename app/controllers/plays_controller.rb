@@ -1,4 +1,6 @@
 class PlaysController < ApplicationController
+  respond_to :js, :jason, :html
+
   def index
     @plays = Play.all
   end
@@ -43,16 +45,13 @@ class PlaysController < ApplicationController
     end
   end
 
-  def upvote
+  def vote
     @play = Play.find(params[:id])
-    @play.upvote_from current_user
-    redirect_to @play
-  end
-
-  def downvote
-    @play = Play.find(params[:id])
-    @play.downvote_from current_user
-    redirect_to @play
+    if !current_user.liked? @play
+      @play.liked_by current_user
+    elsif current_user.liked? @play
+      @play.unliked_by current_user
+    end
   end
 
   private

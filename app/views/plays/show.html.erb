@@ -1,29 +1,21 @@
 <div class="thumbnail thumb-box">
-<ul class="container">
-  <p>Game: <%= @play.game %></p>
-  <p>Category: <%= @play.category %></p>
-  <p>Title: <%= @play.title %></p>
-  <p>Who send it: <%= @play.uploader %></p>
-  <%# <%= @play.player.nickname %>
-  <%# <%= play.user.first_name %>
-  <iframe width="1000" height="760" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
-    <div class="caption" style="text-align:center;">
-      <%= link_to like_play_path(@play), class: "like", method: :put do %>
-        <button type="button" class="btn btn-info" aria-label="Left Align">
-          <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-          <span class="badge"><%= @play.get_upvotes.size %></span>
-        </button>
+  <ul class="container">
+    <p>Game: <%= @play.game %></p>
+    <p>Category: <%= @play.category %></p>
+    <p>Title: <%= @play.title %></p>
+    <p>Who send it: <%= @play.uploader %></p>
+    <%# <%= @play.player.nickname %>
+    <%# <%= play.user.first_name %>
+    <iframe width="1000" height="760" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
+      <%= link_to like_play_path(@play), class: "like-btn", method: :put, remote: :true do %>
+      <div>
+        <span class="fa fa-thumbs-up fa-2x"></span>
+        <span class="likes-count"><%= @play.get_upvotes.size %></span>
+      </div>
       <% end %>
-
-      <%= link_to unlike_play_path(@play), class: "like", method: :put do %>
-        <button type="button" class="btn btn-info" aria-label="Left Align">
-          <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
-          <span class="badge"><%= @play.get_downvotes.size %></span>
-        </button>
-      <% end %>
-    </div>
-</ul>
-<div class="container">
-  <%= link_to "Delete", play_path(@play), method: :delete, id: "delete-link", class: "btn btn-danger" %>
-  <%= link_to "Back", plays_path, class: "btn btn-success" %>
+  </ul>
+  <div class="container">
+    <%= link_to "Delete", play_path(@play), method: :delete, id: "delete-link", class: "btn btn-danger" %>
+    <%= link_to "Back", plays_path, class: "btn btn-success" %>
+  </div>
 </div>
