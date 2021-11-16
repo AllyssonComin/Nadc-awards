@@ -1,4 +1,5 @@
 <div class="thumbnail thumb-box">
+<<<<<<< HEAD
   <ul class="container">
     <p>Game: <%= @play.game %></p>
     <p>Category: <%= @play.category %></p>
@@ -12,6 +13,21 @@
         <span class="fa fa-thumbs-up fa-2x"></span>
         <span class="likes-count"><%= @play.get_upvotes.size %></span>
       </div>
+=======
+<ul class="container">
+  <p>Game: <%= @play.game %></p>
+  <p>Category: <%= @play.category %></p>
+  <p>Title: <%= @play.title %></p>
+  <p>Who send it: <%= @play.uploader %></p>
+  <p>Who did it: <%= @play&.user&.nickname %></p>
+  <iframe width="1000" height="760" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
+    <div class="caption" style="text-align:center;">
+      <%= link_to like_play_path(@play), class: "like", method: :put do %>
+        <button type="button" class="btn btn-info" aria-label="Left Align">
+          <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+          <span class="badge"><%= @play.get_upvotes.size %></span>
+        </button>
+>>>>>>> 1095ddbf9a249046c9be82f4be62ebd7c3b50739
       <% end %>
   </ul>
   <div class="container">

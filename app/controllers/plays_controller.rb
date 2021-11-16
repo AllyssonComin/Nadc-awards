@@ -2,7 +2,11 @@ class PlaysController < ApplicationController
   respond_to :js, :jason, :html
 
   def index
-    @plays = Play.all
+    if params[:query]
+      @plays = Play.search_filter(params[:query])
+    else
+      @plays = Play.all
+    end
   end
 
   def show
@@ -11,14 +15,13 @@ class PlaysController < ApplicationController
 
   def new
     @play = Play.new
-    @users = User.pluck(:email)
+    @users = User.pluck(:nickname)
   end
 
   def create
     @play = Play.new(play_params)
-    @play.uploader = current_user.first_name
-    @play.save
-    # PLAY.UPLOADER NOT WORKING
+    @play.uploader = current_user.nickname
+    @play.user = User.find_by(nickname: params[:play][:player_id])
     if @play.save
       redirect_to plays_path
     else
