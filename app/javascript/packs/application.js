@@ -9,7 +9,6 @@ require("channels")
 require("vanta")
 require("p5")
 require("three")
-
 import { vantaJs } from '../components/vanta';
 document.addEventListener('turbolinks:load', () => {
   // vantaJs();

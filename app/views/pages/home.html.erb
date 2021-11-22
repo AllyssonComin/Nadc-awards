@@ -2,21 +2,21 @@
   <div class="nav d-flex justify-content-between">
     <%= link_to "Sign up", new_user_registration_path, class: "btn-home"%>
     <% if current_user %>
-      <%= link_to "Sign out", destroy_user_session_path, method: "delete",class: "btn-home" %>
+      <%= link_to "Sign out", destroy_user_session_path, method: "delete", class: "btn-home" %>
     <% else %>
       <%= link_to "Sign in", new_user_session_path, class: "btn-home" %>
     <% end %>
   </div>
 
-  <div class="titulo">
-    <h1>Welcome to the Meat Hookah Awards</h1>
-    <h2>The Meat Hookah Awards aim to annually crown the best/funny/pro plays.</h2>
+  <div class="title-home mb-5">
+    <h1>Welcome to the NADC Awards</h1>
+    <h2>The NADC Awards aim to annually crown the best/funny/pro plays.</h2>
   </div>
 
   <div class="container">
-    <h2 class="video-title">This video is our biggest inspiration.</h2>
+    <h2 class="video-title d-flex justify-content-center">This video is our biggest inspiration.</h2>
     <div class="d-flex justify-content-center">
-      <iframe width="1000" height="700" src=<%="https://www.youtube.com/embed/aVSpPk6Ws28" %>></iframe>
+      <iframe width="1100" height="600" src=<%="https://www.youtube.com/embed/aVSpPk6Ws28" %>></iframe>
     </div>
     <h3 class="made">Made by Jasso</h3>
   </div>

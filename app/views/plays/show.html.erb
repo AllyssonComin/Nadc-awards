@@ -1,21 +1,22 @@
+<div id="background-home">
 <div class="thumbnail thumb-box">
 <ul class="container">
-  <p>Game: <%= @play.game %></p>
-  <p>Category: <%= @play.category %></p>
-  <p>Title: <%= @play.title %></p>
-  <p>Who send it: <%= @play.uploader %></p>
-  <%# <%= @play.player.nickname %>
-  <%# <%= play.user.first_name %>
-  <iframe width="1000" height="760" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
+  <div class="text-white title-vid">
+    <ul> Game: <%= @play.game %></ul>
+    <ul> Category: <%= @play.category %></ul>
+    <ul> Title: <%= @play.title %></ul>
+    <ul> Who send it: <%= @play.uploader %></ul>
+  </div>
+  <iframe width="1100" height="560" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
     <div class="caption" style="text-align:center;">
-      <%= link_to like_play_path(@play), class: "like", method: :put do %>
+      <%= link_to like_play_path(@play), class: "like", method: :put, remote: true do %>
         <button type="button" class="btn btn-success" aria-label="Left Align">
           <span class="far fa-thumbs-up" aria-hidden="true"></span>
           <span class="badge"><%= @play.get_upvotes.size %></span>
         </button>
       <% end %>
 
-      <%= link_to unlike_play_path(@play), class: "like", method: :put do %>
+      <%= link_to unlike_play_path(@play), class: "like", method: :put, remote: true do %>
         <button type="button" class="btn btn-danger" aria-label="Left Align">
           <span class="far fa-thumbs-down" aria-hidden="true"></span>
           <span class="badge"><%= @play.get_downvotes.size %></span>
@@ -23,7 +24,26 @@
       <% end %>
     </div>
 </ul>
-<div class="container">
-  <%= link_to "Delete", play_path(@play), method: :delete, id: "delete-link", class: "btn btn-danger" %>
-  <%= link_to "Back", plays_path, class: "btn btn-success" %>
+  <div class="container d-flex justify-content-around pb-5">
+    <%= link_to "Delete", play_path(@play), method: :delete, id: "delete-link", class: "btn-home" %>
+    <%= link_to "Back", plays_path, class: "btn-home" %>
+  </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script>
+VANTA.NET({
+  el: "#background-home",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundColor: 0x120b22,
+  points: 15.00,
+  maxDistance: 29.00,
+  spacing: 20.00
+})
+</script>
