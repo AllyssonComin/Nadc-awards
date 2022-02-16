@@ -2,7 +2,7 @@
   padding: 10px;
 }
 
-.title-home {
+.title {
   h1 {
     padding: 20px;
     font-family: 'Press Start 2P', cursive;
@@ -46,4 +46,10 @@
       color: white;
       background-color: rgba(220, 54, 111, 0.5);
     }
+}
+
+.countdown {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: white;
 }
