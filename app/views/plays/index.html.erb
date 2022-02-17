@@ -7,8 +7,9 @@
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
     <%= link_to "Home Page", root_path, class: "btn btn-primary"%>
+    <hr>
   <% end %>
-  <div class="row">
+  <div>
     <% if @plays.empty? %>
       <p>No plays yet</p>
       <%= link_to "Send your favorite play", new_play_path, class: "btn btn-primary"%>

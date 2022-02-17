@@ -27,10 +27,14 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 gem 'bootstrap'
+gem "font-awesome-rails"
+# Devise
 gem 'devise'
 gem 'pg_search', '~> 2.3.0'
 
+# Act as Votable
 gem 'acts_as_votable'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
