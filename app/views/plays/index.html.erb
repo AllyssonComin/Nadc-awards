@@ -20,6 +20,7 @@
         <ul>Title: <%= play.title %></ul>
         <ul><iframe width="560" height="315" src=<%="https://www.youtube.com/embed/#{play.video}" %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe></ul>
         <ul><%= link_to "See more", play_path(play.id), class: "btn btn-primary"%></ul>
+        <ul><%= play.get_upvotes.size %> | <%= play.get_downvotes.size %></ul>
         <% end %>
     <% end %>
   </div>
