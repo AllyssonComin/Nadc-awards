@@ -1,4 +1,6 @@
 class PlaysController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_play, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   respond_to :js, :jason, :html
 
   def index
@@ -48,18 +50,23 @@ class PlaysController < ApplicationController
     end
   end
 
-  def vote
-    @play = Play.find(params[:id])
-    if !current_user.liked? @play
-      @play.liked_by current_user
-    elsif current_user.liked? @play
-      @play.unliked_by current_user
-    end
+  def upvote
+    @play.upvote_from current_user
+    redirect_to plays_path
+  end
+
+  def downvote
+    @play.downvote_from current_user
+    redirect_to plays_path
   end
 
   private
 
   def play_params
     params.require(:play).permit(:game, :category, :video, :title, :player_id)
+  end
+
+  def set_play
+    @play = Play.find(params[:id])
   end
 end
