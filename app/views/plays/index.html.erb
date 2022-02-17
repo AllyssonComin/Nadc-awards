@@ -6,18 +6,20 @@
       placeholder: "Find a play by category, game or title"
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= link_to "Home Page", root_path, class: "btn btn-primary"%>
   <% end %>
-  <%= link_to "Home Page", root_path, class: "btn btn-primary"%>
-  <% if @plays.empty? %>
-    <p>No plays yet</p>
-    <%= link_to "Send your favorite play", new_play_path, class: "btn btn-primary"%>
-  <% else %>
-    <% @plays.each do |play| %>
-      <ul>Game: <%= play.game %></ul>
-      <ul>Category: <%= play.category %></ul>
-      <ul>Title: <%= play.title %></ul>
-      <ul><iframe width="560" height="315" src=<%="https://www.youtube.com/embed/#{play.video}" %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe></ul>
-      <ul><%= link_to "See more", play_path(play.id), class: "btn btn-primary"%></ul>
-      <% end %>
-  <% end %>
+  <div class="row">
+    <% if @plays.empty? %>
+      <p>No plays yet</p>
+      <%= link_to "Send your favorite play", new_play_path, class: "btn btn-primary"%>
+    <% else %>
+      <% @plays.each do |play| %>
+        <ul>Game: <%= play.game %></ul>
+        <ul>Category: <%= play.category %></ul>
+        <ul>Title: <%= play.title %></ul>
+        <ul><iframe width="560" height="315" src=<%="https://www.youtube.com/embed/#{play.video}" %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe></ul>
+        <ul><%= link_to "See more", play_path(play.id), class: "btn btn-primary"%></ul>
+        <% end %>
+    <% end %>
+  </div>
 </div>
