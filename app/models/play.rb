@@ -1,6 +1,7 @@
 class Play < ApplicationRecord
   belongs_to :user
   acts_as_votable
+  acts_as_punchable
   include PgSearch::Model
   pg_search_scope :search_filter,
     against: [ :category, :title, :game, :uploader ],

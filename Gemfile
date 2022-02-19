@@ -34,7 +34,8 @@ gem 'pg_search', '~> 2.3.0'
 
 # Act as Votable
 gem 'acts_as_votable'
-
+# Punching bag
+gem 'punching_bag'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

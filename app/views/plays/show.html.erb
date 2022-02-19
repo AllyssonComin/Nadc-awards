@@ -1,12 +1,14 @@
 <div class="thumbnail thumb-box">
-  <ul class="container">
-    <p>Game: <%= @play.game %></p>
-    <p>Category: <%= @play.category %></p>
-    <p>Title: <%= @play.title %></p>
-    <p>Who send it: <%= @play.uploader %></p>
-    <%# <%= @play.player.nickname %>
-    <%# <%= play.user.first_name %>
-    <iframe width="1000" height="760" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
+  <ul class="container mt-3">
+    <div class="">
+      <h2>Game: <%= @play.game %></h2>
+      <h2>Category: <%= @play.category %></h2>
+      <h2>Title: <%= @play.title %></h2>
+      <h2>Who send it: <%= @play.uploader %></h2>
+      <%# <%= @play.player.nickname %>
+      <%# <%= play.user.first_name %>
+      <iframe width="1000" height="760" src=<%="https://www.youtube.com/embed/#{@play.video}" %> frameborder="0"></iframe>
+    </div>
   </ul>
   <div class="text-center">
       <%= link_to like_play_path(@play), class: "like", method: :put do %>
@@ -22,6 +24,7 @@
           <span class="badge"><%= @play.get_downvotes.size %></span>
         </button>
       <% end %>
+      <h3>Number of views:<%= @play.hits  %></h3>
   </div>
   <hr>
 
