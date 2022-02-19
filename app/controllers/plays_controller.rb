@@ -13,6 +13,7 @@ class PlaysController < ApplicationController
 
   def show
     @play = Play.find(params[:id])
+    @play.punch(request)
   end
 
   def new
