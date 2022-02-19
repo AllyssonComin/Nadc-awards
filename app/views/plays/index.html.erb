@@ -1,25 +1,30 @@
-<div class="container">
+<div class="container mt-5">
   <%= form_tag plays_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
       placeholder: "Find a play by category, game or title"
     %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-    <%= link_to "Home Page", root_path, class: "btn btn-primary"%>
+    <%= submit_tag "Search", class: "btn btn-primary mt-2" %>
+    <%= link_to "Home Page", root_path, class: "btn btn-primary mt-2"%>
     <hr>
   <% end %>
-  <div>
+
+  <div class="card" style="width: 18rem;">
     <% if @plays.empty? %>
       <p>No plays yet</p>
       <%= link_to "Send your favorite play", new_play_path, class: "btn btn-primary"%>
     <% else %>
       <% @plays.each do |play| %>
-        <ul>Game: <%= play.game %></ul>
-        <ul>Category: <%= play.category %></ul>
-        <ul>Title: <%= play.title %></ul>
-        <ul><iframe width="560" height="315" src=<%="https://www.youtube.com/embed/#{play.video}" %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe></ul>
-        <ul><%= link_to "See more", play_path(play.id), class: "btn btn-primary"%></ul>
+        <ul class="card-img-top"><iframe width="100%" height="100%" src=<%="https://www.youtube.com/embed/#{play.video}" %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe></ul>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Game: <%= play.game %></li>
+          <li class="list-group-item">Category: <%= play.category %></li>
+          <li class="list-group-item">Title: <%= play.title %></li>
+        </ul>
+        <div class="card-body">
+          <a class="card-link"><%= link_to "See more", play_path(play.id), class: "btn btn-primary"%></li>
+        </div>
         <% end %>
     <% end %>
   </div>
